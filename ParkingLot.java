@@ -1,7 +1,7 @@
 import java.util.*;
 
 class ParkingLot {
-    private static ParkingLot parkingLot ;
+    private static ParkingLot instance ;
     private int capacity ;
     private TreeMap<Integer, Ticket> occupiedSlots ;
     private PriorityQueue<Integer> availableSlots ;
@@ -18,11 +18,11 @@ class ParkingLot {
     }
 
 
-    public static ParkingLot getparkingLot(int capacity) {
-        if (parkingLot == null) {
-            parkingLot = new ParkingLot(capacity);
+    public static ParkingLot getInstance(int capacity) {
+        if (instance == null) {
+            instance = new ParkingLot(capacity);
         }
-        return parkingLot ;
+        return instance ;
     }
 
 

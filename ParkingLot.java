@@ -1,3 +1,5 @@
+import java.util.*;
+
 class ParkingLot {
     private static ParkingLot parkingLot ;
     private int capacity ;
@@ -82,7 +84,7 @@ class ParkingLot {
         System.out.println("Not found");
     }
 
-   
+
     public void findSlotsByColor(String color) {
         List<Integer> slots = new ArrayList<>();
         for (Map.Entry<Integer, Ticket> entry : occupiedSlots.entrySet()) {

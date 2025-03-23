@@ -58,7 +58,7 @@ class ParkingLot {
         }
         System.out.println("Slot No. | Registration No. | Colour");
         for (Map.Entry<Integer, Ticket> entry : occupiedSlots.entrySet()) {
-            System.out.println(entry.getKey() + " | " + entry.getValue().getCar().getRegistrationNumber() + " | " + entry.getValue().getCar().getColor());
+            System.out.println(entry.getKey() + " | " + entry.getValue().getCar().getRegistrationNo() + " | " + entry.getValue().getCar().getColor());
         }
     }
 
@@ -67,7 +67,7 @@ class ParkingLot {
         List<String> regNumbers = new ArrayList<>();
         for (Ticket ticket : occupiedSlots.values()) {
             if (ticket.getCar().getColor().equalsIgnoreCase(color)) {
-                regNumbers.add(ticket.getCar().getRegistrationNumber());
+                regNumbers.add(ticket.getCar().getRegistrationNo());
             }
         }
         System.out.println(regNumbers.isEmpty() ? "Not found" : String.join(", ", regNumbers));
@@ -76,7 +76,7 @@ class ParkingLot {
 
     public void findSlotByRegistration(String regNumber) {
         for (Map.Entry<Integer, Ticket> entry : occupiedSlots.entrySet()) {
-            if (entry.getValue().getCar().getRegistrationNumber().equalsIgnoreCase(regNumber)) {
+            if (entry.getValue().getCar().getRegistrationNo().equalsIgnoreCase(regNumber)) {
                 System.out.println(entry.getKey());
                 return;
             }

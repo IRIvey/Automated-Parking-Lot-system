@@ -4,16 +4,16 @@ import java.util.Map;
 class CommandProcessor {
     private Map<String, Command> commands = new HashMap<>();
     private IParkingLot parkingLot;
-    private IParkingQuery parkingQuery;
+    private ParkingQueryManager parkingQuery;
 
     public void setParkingLot(IParkingLot parkingLot) {
         this.parkingLot = parkingLot;
         this.parkingQuery = new ParkingQueryManager(((ParkingLotManager) parkingLot).getOccupiedSlots());
 
 
+        commands.put("status", new StatusCommand(parkingQuery));
         commands.put("park", new ParkCommand(parkingLot));
         commands.put("leave", new LeaveCommand(parkingLot));
-        commands.put("status", new StatusCommand(parkingLot));
         commands.put("registration_numbers_for_cars_with_colour", new FindRegByColorCommand(parkingQuery));
         commands.put("slot_number_for_registration_number", new FindSlotByRegCommand(parkingQuery));
         commands.put("slot_numbers_for_cars_with_colour", new FindSlotsByColorCommand(parkingQuery));
@@ -37,3 +37,4 @@ class CommandProcessor {
         }
     }
 }
+

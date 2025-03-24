@@ -1,6 +1,6 @@
 import java.util.*;
 
-    class ParkingQueryManager implements IParkingQuery {
+class ParkingQueryManager implements IParkingQuery {
     private TreeMap<Integer, Ticket> occupiedSlots;
 
     public ParkingQueryManager(TreeMap<Integer, Ticket> occupiedSlots) {
@@ -39,5 +39,16 @@ import java.util.*;
         }
         System.out.println(slots.isEmpty() ? "Not found" : slots.toString().replaceAll("[\\[\\]]", ""));
     }
-}
 
+
+    public void status() {
+        if (occupiedSlots.isEmpty()) {
+            System.out.println("Parking lot is empty");
+            return;
+        }
+        System.out.println("Slot No. | Registration No. | Colour");
+        for (Map.Entry<Integer, Ticket> entry : occupiedSlots.entrySet()) {
+            System.out.println(entry.getKey() + " | " + entry.getValue().getCar().getRegistrationNo() + " | " + entry.getValue().getCar().getColor());
+        }
+    }
+}

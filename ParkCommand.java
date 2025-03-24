@@ -9,6 +9,8 @@ class ParkCommand implements Command {
     public void execute(String[] args) {
         if (args.length == 2) {
             parkingLot.parkCar(args[0], args[1]);
+        } else {
+            System.out.println("Invalid command syntax");
         }
     }
 }

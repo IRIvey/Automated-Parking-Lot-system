@@ -8,7 +8,10 @@ class LeaveCommand implements Command {
     @Override
     public void execute(String[] args) {
         if (args.length == 1) {
-            parkingLot.leave(Integer.parseInt(args[0]));
+            int slot = Integer.parseInt(args[0]);
+            parkingLot.leave(slot);
+        } else {
+            System.out.println("Invalid command syntax");
         }
     }
 }

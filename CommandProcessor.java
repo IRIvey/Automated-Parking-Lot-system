@@ -5,13 +5,15 @@ class CommandProcessor {
     private Map<String, Command> commands = new HashMap<>();
     private IParkingLot parkingLot;
     private ParkingQueryManager parkingQuery;
+    private ParkingStatusManager parkingStatusManager;
 
     public void setParkingLot(IParkingLot parkingLot) {
         this.parkingLot = parkingLot;
         this.parkingQuery = new ParkingQueryManager(((ParkingLotManager) parkingLot).getOccupiedSlots());
+        this.parkingStatusManager = new ParkingStatusManager(((ParkingLotManager) parkingLot).getOccupiedSlots());
 
 
-        commands.put("status", new StatusCommand(parkingQuery));
+        commands.put("status", new StatusCommand(parkingStatusManager));
         commands.put("park", new ParkCommand(parkingLot));
         commands.put("leave", new LeaveCommand(parkingLot));
         commands.put("registration_numbers_for_cars_with_colour", new FindRegByColorCommand(parkingQuery));

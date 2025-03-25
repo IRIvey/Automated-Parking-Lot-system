@@ -1,12 +1,18 @@
-class StatusCommand implements Command {
-    private ParkingQueryManager parkingQuery;
+import java.util.List;
 
-    public StatusCommand(ParkingQueryManager parkingQuery) {
-        this.parkingQuery = parkingQuery;
+class StatusCommand implements Command {
+    private ParkingStatusManager parkingStatusManager;
+
+    public StatusCommand(ParkingStatusManager parkingStatusManager) {
+        this.parkingStatusManager = parkingStatusManager;
     }
 
     @Override
     public void execute(String[] args) {
-        parkingQuery.status();
+        List<String> statusList = parkingStatusManager.getStatus();
+        for (String line : statusList) {
+            System.out.println(line);
+        }
     }
 }
+

@@ -20,6 +20,7 @@ class ParkingStatusManager {
             }
         }
         return statusList;
+
     }
 }
 

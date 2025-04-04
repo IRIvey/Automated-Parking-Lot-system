@@ -1,6 +1,6 @@
 package entity;
 
-class Ticket {
+public class Ticket {
     private int slotNumber;
     private Car car;
 

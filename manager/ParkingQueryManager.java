@@ -1,8 +1,10 @@
 package manager;
 
+import interfaces.IParkingQuery;
+import entity.Ticket;
 import java.util.*;
 
-class ParkingQueryManager implements IParkingQuery {
+public class ParkingQueryManager implements IParkingQuery {
     private TreeMap<Integer, Ticket> occupiedSlots;
 
     public ParkingQueryManager(TreeMap<Integer, Ticket> occupiedSlots) {

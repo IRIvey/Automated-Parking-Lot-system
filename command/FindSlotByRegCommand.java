@@ -1,6 +1,7 @@
 package command;
+import interfaces.IParkingQuery;
 
-class FindSlotByRegCommand implements Command {
+public class FindSlotByRegCommand implements Command {
     private IParkingQuery parkingQuery;
 
     public FindSlotByRegCommand(IParkingQuery parkingQuery) {

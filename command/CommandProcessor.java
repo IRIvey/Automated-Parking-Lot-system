@@ -1,9 +1,15 @@
 package command;
 
+import interfaces.IParkingLot;
+import manager.ParkingLotManager;
+import manager.ParkingQueryManager;
+import manager.ParkingStatusManager;
+
+
 import java.util.HashMap;
 import java.util.Map;
 
-class CommandProcessor {
+public class CommandProcessor {
     private Map<String, Command> commands = new HashMap<>();
     private IParkingLot parkingLot;
     private ParkingQueryManager parkingQuery;

@@ -1,8 +1,9 @@
 package manager;
 
+import entity.Ticket;
 import java.util.*;
 
-class ParkingStatusManager {
+public class ParkingStatusManager {
     private TreeMap<Integer, Ticket> occupiedSlots;
 
     public ParkingStatusManager(TreeMap<Integer, Ticket> occupiedSlots) {

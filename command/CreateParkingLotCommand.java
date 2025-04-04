@@ -1,6 +1,10 @@
 package command;
 
-class CreateParkingLotCommand implements Command {
+import command.CommandProcessor;
+import factory.ParkingLotFactory;
+
+
+public class CreateParkingLotCommand implements Command {
     private CommandProcessor processor;
 
     public CreateParkingLotCommand(CommandProcessor processor) {

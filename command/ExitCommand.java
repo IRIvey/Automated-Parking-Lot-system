@@ -1,6 +1,6 @@
 package command;
 
-class ExitCommand implements Command {
+public class ExitCommand implements Command {
     @Override
     public void execute(String[] args) {
         System.out.println("Exiting system...");

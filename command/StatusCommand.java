@@ -1,8 +1,10 @@
 package command;
 
+import manager.ParkingStatusManager;
 import java.util.List;
 
-class StatusCommand implements Command {
+
+public class StatusCommand implements Command {
     private ParkingStatusManager parkingStatusManager;
 
     public StatusCommand(ParkingStatusManager parkingStatusManager) {

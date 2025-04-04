@@ -1,6 +1,9 @@
 package command;
 
-class ParkCommand implements Command {
+import interfaces.IParkingLot;
+
+
+public class ParkCommand implements Command {
     private IParkingLot parkingLot;
 
     public ParkCommand(IParkingLot parkingLot) {

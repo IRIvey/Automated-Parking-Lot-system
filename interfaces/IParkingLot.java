@@ -1,6 +1,9 @@
 package interfaces;
 
-interface IParkingLot {
+import entity.Ticket;
+
+
+public interface IParkingLot {
 
     Ticket parkCar(String regNumber, String color);
     void leave(int slotNumber);

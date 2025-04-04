@@ -1,8 +1,12 @@
 package manager;
 
+import interfaces.IParkingLot;
+import entity.Car;
+import entity.Ticket;
+
 import java.util.*;
 
-class ParkingLotManager implements IParkingLot {
+public class ParkingLotManager implements IParkingLot {
     private int capacity;
     private TreeMap<Integer, Ticket> occupiedSlots;
     private PriorityQueue<Integer> availableSlots;

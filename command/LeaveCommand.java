@@ -1,6 +1,8 @@
 package command;
 
-class LeaveCommand implements Command {
+import interfaces.IParkingLot;
+
+public class LeaveCommand implements Command {
     private IParkingLot parkingLot;
 
     public LeaveCommand(IParkingLot parkingLot) {

@@ -1,6 +1,7 @@
 package command;
+import interfaces.IParkingQuery;
 
-class FindRegByColorCommand implements Command {
+public class FindRegByColorCommand implements Command {
     private IParkingQuery parkingQuery;
 
     public FindRegByColorCommand(IParkingQuery parkingQuery) {

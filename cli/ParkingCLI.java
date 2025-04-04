@@ -1,3 +1,7 @@
+package cli;
+
+import command.CommandProcessor;
+
 import java.util.Scanner;
 
 public class ParkingCLI {

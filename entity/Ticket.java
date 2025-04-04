@@ -1,3 +1,5 @@
+package entity;
+
 class Ticket {
     private int slotNumber;
     private Car car;

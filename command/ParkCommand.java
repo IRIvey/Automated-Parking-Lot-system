@@ -1,3 +1,5 @@
+package command;
+
 class ParkCommand implements Command {
     private IParkingLot parkingLot;
 

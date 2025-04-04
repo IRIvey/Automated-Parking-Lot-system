@@ -1,3 +1,5 @@
+package interfaces;
+
 interface IParkingLot {
 
     Ticket parkCar(String regNumber, String color);

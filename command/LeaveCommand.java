@@ -1,3 +1,5 @@
+package command;
+
 class LeaveCommand implements Command {
     private IParkingLot parkingLot;
 

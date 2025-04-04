@@ -1,3 +1,5 @@
+package command;
+
 class CreateParkingLotCommand implements Command {
     private CommandProcessor processor;
 

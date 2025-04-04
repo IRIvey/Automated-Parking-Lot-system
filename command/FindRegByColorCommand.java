@@ -1,14 +1,16 @@
-class FindSlotsByColorCommand implements Command {
+package command;
+
+class FindRegByColorCommand implements Command {
     private IParkingQuery parkingQuery;
 
-    public FindSlotsByColorCommand(IParkingQuery parkingQuery) {
+    public FindRegByColorCommand(IParkingQuery parkingQuery) {
         this.parkingQuery = parkingQuery;
     }
 
     @Override
     public void execute(String[] args) {
         if (args.length == 1) {
-            parkingQuery.findSlotsByColor(args[0]);
+            parkingQuery.findRegistrationByColor(args[0]);
         } else {
             System.out.println("Invalid command syntax");
         }

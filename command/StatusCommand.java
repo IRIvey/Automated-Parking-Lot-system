@@ -1,3 +1,5 @@
+package command;
+
 import java.util.List;
 
 class StatusCommand implements Command {

@@ -1,3 +1,5 @@
+package manager;
+
 import java.util.*;
 
 class ParkingQueryManager implements IParkingQuery {

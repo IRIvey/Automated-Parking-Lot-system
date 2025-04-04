@@ -1,3 +1,5 @@
+package command;
+
 class FindSlotByRegCommand implements Command {
     private IParkingQuery parkingQuery;
 

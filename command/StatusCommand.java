@@ -1,13 +1,12 @@
 package command;
 
-import manager.ParkingStatusManager;
+import interfaces.IParkingStatus;
 import java.util.List;
 
-
 public class StatusCommand implements Command {
-    private ParkingStatusManager parkingStatusManager;
+    private IParkingStatus parkingStatusManager;
 
-    public StatusCommand(ParkingStatusManager parkingStatusManager) {
+    public StatusCommand(IParkingStatus parkingStatusManager) {
         this.parkingStatusManager = parkingStatusManager;
     }
 
@@ -19,4 +18,3 @@ public class StatusCommand implements Command {
         }
     }
 }
-

@@ -1,15 +1,21 @@
 package manager;
 
 import entity.Ticket;
-import java.util.*;
+import interfaces.IParkingStatus;
 
-public class ParkingStatusManager {
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class ParkingStatusManager implements IParkingStatus {
     private TreeMap<Integer, Ticket> occupiedSlots;
 
     public ParkingStatusManager(TreeMap<Integer, Ticket> occupiedSlots) {
         this.occupiedSlots = occupiedSlots;
     }
 
+    @Override
     public List<String> getStatus() {
         List<String> statusList = new ArrayList<>();
         if (occupiedSlots.isEmpty()) {
@@ -23,7 +29,7 @@ public class ParkingStatusManager {
             }
         }
         return statusList;
-
     }
 }
+
 

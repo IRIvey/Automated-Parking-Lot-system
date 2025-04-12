@@ -1,6 +1,8 @@
 package command;
 
 import interfaces.IParkingLot;
+import interfaces.IParkingQuery;
+import interfaces.IParkingStatus;
 import manager.ParkingLotManager;
 import manager.ParkingQueryManager;
 import manager.ParkingStatusManager;
@@ -12,14 +14,13 @@ import java.util.Map;
 public class CommandProcessor {
     private Map<String, Command> commands = new HashMap<>();
     private IParkingLot parkingLot;
-    private ParkingQueryManager parkingQuery;
-    private ParkingStatusManager parkingStatusManager;
+    private IParkingQuery parkingQuery;
+    private IParkingStatus parkingStatusManager;
 
     public void setParkingLot(IParkingLot parkingLot) {
         this.parkingLot = parkingLot;
         this.parkingQuery = new ParkingQueryManager(((ParkingLotManager) parkingLot).getOccupiedSlots());
         this.parkingStatusManager = new ParkingStatusManager(((ParkingLotManager) parkingLot).getOccupiedSlots());
-
 
         commands.put("status", new StatusCommand(parkingStatusManager));
         commands.put("park", new ParkCommand(parkingLot));
